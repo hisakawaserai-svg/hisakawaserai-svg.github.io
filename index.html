@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SeraApps</title>
+<meta name="description" content="SeraApps — 個人開発のiOS / Androidアプリ">
+<style>
+  :root{
+    --ink:#1b2028;
+    --ink-soft:#5a6472;
+    --line:#dfe3e8;
+    --paper:#fbfbf9;
+    --panel:#ffffff;
+    --accent:#2f7d76;
+    --check-a:#eceff1;
+    --check-b:#f7f8f9;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
+    font-size:16px;
+    line-height:1.9;
+    letter-spacing:.01em;
+  }
+
+  /* 透過PNGの市松 — 扱っているものの印 */
+  .band{
+    height:10px;
+    background-image:
+      linear-gradient(45deg,var(--check-a) 25%,transparent 25%,transparent 75%,var(--check-a) 75%),
+      linear-gradient(45deg,var(--check-a) 25%,var(--check-b) 25%,var(--check-b) 75%,var(--check-a) 75%);
+    background-size:20px 20px;
+    background-position:0 0,10px 10px;
+  }
+
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px 96px}
+
+  header{padding:72px 0 40px}
+  h1{font-size:34px;line-height:1.3;margin:0 0 10px;font-weight:700;letter-spacing:.02em}
+  .tagline{margin:0;color:var(--ink-soft);font-size:15px}
+
+  h2{
+    font-size:15px;font-weight:700;margin:0 0 18px;
+    color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;
+  }
+
+  section{padding-top:32px;border-top:1px solid var(--line);margin-top:8px}
+
+  .app{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:24px 26px;
+    margin:0 0 16px;
+  }
+  .app h3{font-size:19px;margin:0 0 8px;font-weight:700}
+  .app p{margin:0 0 16px;color:var(--ink-soft);font-size:15px}
+  .app .links{margin:0;font-size:14px}
+  .app .links a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid rgba(47,125,118,.3);
+    padding-bottom:1px;
+    margin-right:18px;
+    text-underline-offset:3px;
+  }
+  .app .links a:hover{border-bottom-color:var(--accent)}
+
+  .contact{margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
+  .contact p{margin:0 0 10px;font-size:15px}
+  .contact a{color:var(--accent);text-underline-offset:3px}
+
+  footer{
+    margin-top:48px;padding-top:24px;border-top:1px solid var(--line);
+    color:var(--ink-soft);font-size:13px;
+  }
+
+  @media (max-width:520px){
+    body{font-size:15px}
+    h1{font-size:27px}
+    header{padding:52px 0 32px}
+    .wrap{padding:0 20px 72px}
+  }
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"></div>
+
+<div class="wrap">
+
+<header>
+  <h1>SeraApps</h1>
+  <p class="tagline">個人開発のiOS / Androidアプリ</p>
+</header>
+
+<section>
+  <h2>Apps</h2>
+
+  <div class="app">
+    <h3>スタンプ抜き</h3>
+    <p>イラストシートから、キャラクターを1体ずつ切り出して透過PNGにするアプリです。画像はすべて端末の中だけで処理され、サーバーへ送信されません。</p>
+    <p class="links">
+      <a href="bg-remover/support.html">サポート</a>
+      <a href="bg-remover/privacy.html">プライバシーポリシー</a>
+    </p>
+  </div>
+</section>
+
+<div class="contact">
+  <p><strong>お問い合わせ</strong></p>
+  <p>アプリに関するご質問・不具合の報告は、<a href="mailto:stampnuki.app@gmail.com">stampnuki.app@gmail.com</a> までお送りください。</p>
+</div>
+
+<footer>
+  <p>© 2026 SeraApps</p>
+</footer>
+
+</div>
+
+</body>
+</html>
