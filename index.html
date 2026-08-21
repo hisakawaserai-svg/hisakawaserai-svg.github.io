@@ -6,131 +6,141 @@
 <title>SeraApps</title>
 <meta name="description" content="SeraApps — 個人開発のiOS / Androidアプリ">
 <style>
-  :root{
-    --ink:#1b2028;
-    --ink-soft:#5a6472;
-    --line:#dfe3e8;
-    --paper:#fbfbf9;
-    --panel:#ffffff;
-    --accent:#2f7d76;
-    --check-a:#eceff1;
-    --check-b:#f7f8f9;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;
-    font-size:16px;
-    line-height:1.9;
-    letter-spacing:.01em;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --page-bg:oklch(0.97 0.003 240);
+  --panel:oklch(0.995 0.002 240);
+  --ink:oklch(0.22 0.006 240);
+  --ink-soft:oklch(0.48 0.006 240);
+  --line:oklch(0.78 0.006 240);
+  --teal:oklch(0.5 0.09 195);
+  --navy:oklch(0.38 0.06 262);
+  --font-b:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;
+  --font-h:Georgia,"Times New Roman",serif;
+  --font-m:ui-monospace,"SF Mono",Menlo,monospace;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--page-bg);color:var(--ink);font-family:var(--font-b);min-height:100vh}
+.sheet{max-width:640px;margin:0 auto;background:var(--panel);
+  border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:100vh}
 
-  /* 透過PNGの市松 — 扱っているものの印 */
-  .band{
-    height:10px;
-    background-image:
-      linear-gradient(45deg,var(--check-a) 25%,transparent 25%,transparent 75%,var(--check-a) 75%),
-      linear-gradient(45deg,var(--check-a) 25%,var(--check-b) 25%,var(--check-b) 75%,var(--check-a) 75%);
-    background-size:20px 20px;
-    background-position:0 0,10px 10px;
-  }
+/* 中立の帯 */
+.band{height:56px;background:var(--ink);border-bottom:2px solid var(--ink)}
 
-  .wrap{max-width:680px;margin:0 auto;padding:0 24px 96px}
+/* ヘッダー */
+header{padding:32px 24px 28px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:18px}
+.bird{width:64px;height:64px;flex:0 0 64px}
+h1{font:700 30px/1.2 var(--font-h);margin:0 0 4px;letter-spacing:.01em}
+.tagline{font:400 13px var(--font-m);color:var(--ink-soft)}
 
-  header{padding:72px 0 40px}
-  h1{font-size:34px;line-height:1.3;margin:0 0 10px;font-weight:700;letter-spacing:.02em}
-  .tagline{margin:0;color:var(--ink-soft);font-size:15px}
+/* セクション見出し */
+.sec-label{padding:26px 24px 14px;font:600 11px var(--font-m);
+  letter-spacing:.06em;color:var(--ink-soft)}
 
-  h2{
-    font-size:15px;font-weight:700;margin:0 0 18px;
-    color:var(--ink-soft);letter-spacing:.08em;text-transform:uppercase;
-  }
+/* アプリカード */
+.app{margin:0 24px 20px;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+.cardband{height:30px;display:flex;align-items:flex-end;background:var(--page-bg)}
+.cardband .step{background-color:var(--accent);width:12px;
+  background-image:linear-gradient(var(--page-bg) 0 1px,transparent 1px 5px);
+  background-size:12px 5px;background-position:left bottom}
+.cardband .step.grow{flex:1}
+.cardband.check{display:block;height:30px;background-color:var(--accent);
+  background-image:
+    linear-gradient(45deg,rgba(255,255,255,.28) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.28) 75%),
+    linear-gradient(45deg,rgba(255,255,255,.28) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.28) 75%);
+  background-size:16px 16px;background-position:0 0,8px 8px}
+.app .body{padding:20px 22px 22px;border-top:1px solid var(--line)}
+.app h2{font:700 20px var(--font-h);margin:0 0 8px}
+.app p{font:400 14.5px/1.85 var(--font-b);color:var(--ink-soft);margin:0 0 16px}
+.app .links{display:flex;flex-wrap:wrap;gap:8px}
+.app .links a{font:600 12px var(--font-m);color:var(--accent);text-decoration:none;
+  border:1px solid var(--accent);padding:7px 14px;min-height:36px;
+  display:inline-flex;align-items:center}
+.app .links a:hover{background:var(--accent);color:#fff}
+.app .links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-  section{padding-top:32px;border-top:1px solid var(--line);margin-top:8px}
+/* お問い合わせ */
+.contact{padding:22px 24px 4px}
+.contact h2{font:700 18px var(--font-h);margin:0 0 10px;display:flex;gap:10px;
+  align-items:baseline;border-top:1px solid var(--line);padding-top:20px}
+.contact h2 .n{font:600 13px var(--font-m);color:var(--ink-soft)}
+.contact p{font:400 15px/1.85 var(--font-b);color:var(--ink-soft);margin:0 0 14px}
+.contact a{color:var(--ink);text-underline-offset:3px}
 
-  .app{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:24px 26px;
-    margin:0 0 16px;
-  }
-  .app h3{font-size:19px;margin:0 0 8px;font-weight:700}
-  .app p{margin:0 0 16px;color:var(--ink-soft);font-size:15px}
-  .app .links{margin:0;font-size:14px}
-  .app .links a{
-    color:var(--accent);
-    text-decoration:none;
-    border-bottom:1px solid rgba(47,125,118,.3);
-    padding-bottom:1px;
-    margin-right:18px;
-    text-underline-offset:3px;
-  }
-  .app .links a:hover{border-bottom-color:var(--accent)}
+footer{display:flex;justify-content:space-between;align-items:center;
+  padding:20px 24px;border-top:2px solid var(--ink);margin-top:16px}
+footer span{font:400 12px var(--font-m);color:var(--ink-soft)}
 
-  .contact{margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
-  .contact p{margin:0 0 10px;font-size:15px}
-  .contact a{color:var(--accent);text-underline-offset:3px}
-
-  footer{
-    margin-top:48px;padding-top:24px;border-top:1px solid var(--line);
-    color:var(--ink-soft);font-size:13px;
-  }
-
-  @media (max-width:520px){
-    body{font-size:15px}
-    h1{font-size:27px}
-    header{padding:52px 0 32px}
-    .wrap{padding:0 20px 72px}
-  }
+@media (max-width:520px){
+  header{padding:26px 20px 22px;gap:14px}
+  .bird{width:52px;height:52px;flex:0 0 52px}
+  h1{font-size:25px}
+  .app{margin:0 20px 18px}
+  .sec-label{padding:22px 20px 12px}
+  .contact{padding:20px 20px 4px}
+  footer{padding:18px 20px}
+}
 </style>
 </head>
 <body>
-
+<div class="sheet">
 <div class="band" aria-hidden="true"></div>
 
-<div class="wrap">
-
 <header>
-  <h1>SeraApps</h1>
-  <p class="tagline">個人開発のiOS / Androidアプリ</p>
+  <svg class="bird" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SeraApps のマスコット">
+  <path d="M55 72 L84 86 L82 93 L52 81 Z" fill="#3A3A3C"/>
+  <path d="M45 82 L45 90 M42 91 L45 90 L48 91" fill="none" stroke="#FF9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M55 82 L55 90 M52 91 L55 90 L58 91" fill="none" stroke="#FF9500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="50" cy="54" rx="29" ry="31" fill="#FFFFFF"/>
+  <ellipse cx="70" cy="60" rx="9" ry="16" fill="#D8D8DC"/>
+  <circle cx="42" cy="48" r="3" fill="#1C1C1E"/>
+  <circle cx="58" cy="48" r="3" fill="#1C1C1E"/>
+  <path d="M47 54 L53 54 L50 60 Z" fill="#FF9500"/>
+  <circle cx="36" cy="56" r="3.5" fill="rgba(255,150,170,0.45)"/>
+  <circle cx="64" cy="56" r="3.5" fill="rgba(255,150,170,0.45)"/>
+</svg>
+  <div>
+    <h1>SeraApps</h1>
+    <p class="tagline">個人開発の iOS / Android アプリ</p>
+  </div>
 </header>
 
-<section>
-  <h2>Apps</h2>
+<p class="sec-label">[ APPS ]</p>
 
-  <div class="app">
-    <h3>スタンプ抜き</h3>
+<div class="app" style="--accent:var(--teal)">
+  <div class="cardband check" aria-hidden="true"></div>
+  <div class="body">
+    <h2>スタンプ抜き</h2>
     <p>イラストシートから、キャラクターを1体ずつ切り出して透過PNGにするアプリです。画像はすべて端末の中だけで処理され、サーバーへ送信されません。</p>
     <p class="links">
       <a href="bg-remover/support.html">サポート</a>
       <a href="bg-remover/privacy.html">プライバシーポリシー</a>
     </p>
   </div>
+</div>
 
-  <div class="app">
-    <h3>うりつみ</h3>
+<div class="app" style="--accent:var(--navy)">
+  <div class="cardband" aria-hidden="true"><div class="step" style="height:5px"></div><div class="step" style="height:10px"></div><div class="step" style="height:15px"></div><div class="step" style="height:20px"></div><div class="step" style="height:25px"></div><div class="step" style="height:30px"></div><div class="step grow" style="height:30px"></div></div>
+  <div class="body">
+    <h2>うりつみ</h2>
     <p>フリマで売った記録をつけて、手元にいくら残ったかが分かるアプリです。手数料・送料・梱包材まで含めて計算できます。記録はすべて端末の中だけに保存され、サーバーへ送信されません。</p>
     <p class="links">
       <a href="Profit-Calculator-App-RN/support.html">サポート</a>
       <a href="Profit-Calculator-App-RN/privacy.html">プライバシーポリシー</a>
     </p>
   </div>
-</section>
+</div>
 
 <div class="contact">
-  <p><strong>お問い合わせ</strong></p>
-  <p>アプリに関するご質問・不具合の報告は、<a href="mailto:stampnuki.app@gmail.com">stampnuki.app@gmail.com</a> までお送りください。</p>
+  <h2><span class="n">01</span>お問い合わせ</h2>
+  <p>アプリに関するご質問・不具合の報告は、下記までお送りください。</p>
+  <p><a href="mailto:stampnuki.app@gmail.com">stampnuki.app@gmail.com</a></p>
 </div>
 
 <footer>
-  <p>© 2026 SeraApps</p>
+  <span>© 2026 SeraApps</span>
 </footer>
-
 </div>
-
 </body>
 </html>
