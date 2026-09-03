@@ -47,8 +47,8 @@ h1{font:700 30px/1.2 var(--font-h);margin:0 0 4px;letter-spacing:.01em}
   background-size:12px 5px;background-position:left bottom}
 .cardband .step.grow{flex:1}
 
-.cardband.wave{height:30px;display:flex;align-items:center;padding:0 10px;background:var(--page-bg);overflow:hidden}
-.cardband.wave .wave-svg{width:100%;height:22px;display:block}
+.cardband.eq{height:30px;display:flex;align-items:center;padding:0 8px;background:var(--page-bg);overflow:hidden}
+.cardband.eq .eq-svg{width:100%;height:22px;display:block}
 
 .cardband.check{display:block;height:30px;background-color:var(--accent);
   background-image:
@@ -139,12 +139,53 @@ footer span{font:400 12px var(--font-m);color:var(--ink-soft)}
 
 
 <div class="app" style="--accent:var(--blue)">
-  <div class="cardband wave" style="color:var(--accent)" aria-hidden="true">
-    <svg class="wave-svg" viewBox="0 0 640 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
-        d="M0 15 C40 4, 60 26, 100 15 S160 4, 200 15 S260 26, 300 15 S360 4, 400 15 S460 26, 500 15 S560 4, 600 15 S640 26, 640 15"/>
-      <path fill="none" stroke="currentColor" stroke-width="1.3" stroke-opacity=".45" stroke-linecap="round" stroke-linejoin="round"
-        d="M0 19 C35 10, 70 28, 110 19 S180 10, 220 19 S290 28, 330 19 S400 10, 440 19 S510 28, 550 19 S610 10, 640 19"/>
+  <div class="cardband eq" style="color:var(--accent)" aria-hidden="true">
+    <svg class="eq-svg" viewBox="0 0 640 30" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+      <line x1="12" y1="15" x2="628" y2="15" stroke="currentColor" stroke-opacity=".28" stroke-width="1"/>
+      <g fill="currentColor">
+        <rect x="24" y="11" width="3" height="8" rx="1"/>
+        <rect x="38" y="7" width="3" height="16" rx="1"/>
+        <rect x="52" y="9" width="3" height="12" rx="1"/>
+        <rect x="66" y="4" width="3" height="22" rx="1"/>
+        <rect x="80" y="8" width="3" height="14" rx="1"/>
+        <rect x="94" y="6" width="3" height="18" rx="1"/>
+        <rect x="108" y="11" width="3" height="8" rx="1"/>
+        <rect x="122" y="3" width="3" height="24" rx="1"/>
+        <rect x="136" y="7" width="3" height="16" rx="1"/>
+        <rect x="150" y="9" width="3" height="12" rx="1"/>
+        <rect x="164" y="5" width="3" height="20" rx="1"/>
+        <rect x="178" y="8" width="3" height="14" rx="1"/>
+        <rect x="192" y="12" width="3" height="6" rx="1"/>
+        <rect x="206" y="6" width="3" height="18" rx="1"/>
+        <rect x="220" y="4" width="3" height="22" rx="1"/>
+        <rect x="234" y="8" width="3" height="14" rx="1"/>
+        <rect x="248" y="7" width="3" height="16" rx="1"/>
+        <rect x="262" y="2" width="3" height="26" rx="1"/>
+        <rect x="276" y="6" width="3" height="18" rx="1"/>
+        <rect x="290" y="9" width="3" height="12" rx="1"/>
+        <rect x="304" y="5" width="3" height="20" rx="1"/>
+        <rect x="318" y="8" width="3" height="14" rx="1"/>
+        <rect x="332" y="11" width="3" height="8" rx="1"/>
+        <rect x="346" y="4" width="3" height="22" rx="1"/>
+        <rect x="360" y="7" width="3" height="16" rx="1"/>
+        <rect x="374" y="3" width="3" height="24" rx="1"/>
+        <rect x="388" y="8" width="3" height="14" rx="1"/>
+        <rect x="402" y="6" width="3" height="18" rx="1"/>
+        <rect x="416" y="9" width="3" height="12" rx="1"/>
+        <rect x="430" y="5" width="3" height="20" rx="1"/>
+        <rect x="444" y="11" width="3" height="8" rx="1"/>
+        <rect x="458" y="7" width="3" height="16" rx="1"/>
+        <rect x="472" y="4" width="3" height="22" rx="1"/>
+        <rect x="486" y="8" width="3" height="14" rx="1"/>
+        <rect x="500" y="9" width="3" height="12" rx="1"/>
+        <rect x="514" y="6" width="3" height="18" rx="1"/>
+        <rect x="528" y="11" width="3" height="8" rx="1"/>
+        <rect x="542" y="7" width="3" height="16" rx="1"/>
+        <rect x="556" y="5" width="3" height="20" rx="1"/>
+        <rect x="570" y="9" width="3" height="12" rx="1"/>
+        <rect x="584" y="8" width="3" height="14" rx="1"/>
+        <rect x="598" y="11" width="3" height="8" rx="1"/>
+      </g>
     </svg>
   </div>
   <div class="body">
