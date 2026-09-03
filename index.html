@@ -15,7 +15,7 @@
   --line:oklch(0.78 0.006 240);
   --teal:oklch(0.5 0.09 195);
   --navy:oklch(0.38 0.06 262);
-  --blue:#0066cc;
+  --blue:#7B85E0;
   --font-b:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;
   --font-h:Georgia,"Times New Roman",serif;
   --font-m:ui-monospace,"SF Mono",Menlo,monospace;
@@ -46,6 +46,10 @@ h1{font:700 30px/1.2 var(--font-h);margin:0 0 4px;letter-spacing:.01em}
   background-image:linear-gradient(var(--page-bg) 0 1px,transparent 1px 5px);
   background-size:12px 5px;background-position:left bottom}
 .cardband .step.grow{flex:1}
+
+.cardband.wave{height:30px;display:flex;align-items:center;padding:0 10px;background:var(--page-bg);overflow:hidden}
+.cardband.wave .wave-svg{width:100%;height:22px;display:block}
+
 .cardband.check{display:block;height:30px;background-color:var(--accent);
   background-image:
     linear-gradient(45deg,rgba(255,255,255,.28) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.28) 75%),
@@ -135,7 +139,14 @@ footer span{font:400 12px var(--font-m);color:var(--ink-soft)}
 
 
 <div class="app" style="--accent:var(--blue)">
-  <div class="cardband" aria-hidden="true"><div class="step" style="height:5px"></div><div class="step" style="height:10px"></div><div class="step" style="height:15px"></div><div class="step" style="height:20px"></div><div class="step" style="height:25px"></div><div class="step" style="height:30px"></div><div class="step grow" style="height:30px"></div></div>
+  <div class="cardband wave" style="color:var(--accent)" aria-hidden="true">
+    <svg class="wave-svg" viewBox="0 0 640 30" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+        d="M0 15 C40 4, 60 26, 100 15 S160 4, 200 15 S260 26, 300 15 S360 4, 400 15 S460 26, 500 15 S560 4, 600 15 S640 26, 640 15"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.3" stroke-opacity=".45" stroke-linecap="round" stroke-linejoin="round"
+        d="M0 19 C35 10, 70 28, 110 19 S180 10, 220 19 S290 28, 330 19 S400 10, 440 19 S510 28, 550 19 S610 10, 640 19"/>
+    </svg>
+  </div>
   <div class="body">
     <h2>レポろく</h2>
     <p>研修などの話を録音し、端末内で文字起こししてノートに残すアプリです。音声・ノート・写真は端末内に保存し、クラウドに学習データとして送りません。外部通信は広告配信に必要な範囲に限ります。</p>
