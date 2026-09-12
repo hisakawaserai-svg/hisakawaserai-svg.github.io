@@ -59,7 +59,9 @@ h1{font:700 30px/1.2 var(--font-h);margin:0 0 4px;letter-spacing:.01em}
     linear-gradient(45deg,rgba(255,255,255,.28) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.28) 75%);
   background-size:16px 16px;background-position:0 0,8px 8px}
 .app .body{padding:20px 22px 22px;border-top:1px solid var(--line)}
-.app h2{font:700 20px var(--font-h);margin:0 0 8px}
+.app .title{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+.app .title img{width:32px;height:32px;border-radius:8px;display:block}
+.app h2{font:700 20px var(--font-h);margin:0}
 .app p{font:400 14.5px/1.85 var(--font-b);color:var(--ink-soft);margin:0 0 16px}
 .app .links{display:flex;flex-wrap:wrap;gap:8px}
 .app .links a{font:600 12px var(--font-m);color:var(--accent);text-decoration:none;
@@ -67,7 +69,7 @@ h1{font:700 30px/1.2 var(--font-h);margin:0 0 4px;letter-spacing:.01em}
   display:inline-flex;align-items:center}
 .app .links a:hover{background:var(--accent);color:#fff}
 .app .links a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.app .stores{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:4px}
+.app .stores{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:14px;margin-top:4px}
 .app .stores img{display:block}
 
 /* お問い合わせ */
@@ -121,7 +123,7 @@ footer span{font:400 12px var(--font-m);color:var(--ink-soft)}
 <div class="app" style="--accent:var(--teal)">
   <div class="cardband check" aria-hidden="true"></div>
   <div class="body">
-    <h2>スタンプ抜き</h2>
+    <div class="title"><img src="icons/bg-remover.png" alt="" width="32" height="32"><h2>スタンプ抜き</h2></div>
     <p>イラストシートから、キャラクターを1体ずつ切り出して透過PNGにするアプリです。画像はすべて端末の中だけで処理され、サーバーへ送信されません。</p>
     <p class="links">
       <a href="bg-remover/support.html">サポート</a>
